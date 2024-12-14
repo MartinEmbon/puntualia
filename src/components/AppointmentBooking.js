@@ -78,7 +78,7 @@ function AppointmentBooking() {
 
   return (
     <div className="appointment-booking">
-    <h1>Book an Appointment</h1>
+    <h1>Book an Appointment1</h1>
     <input
               type="date"
               value={selectedDate}
@@ -93,13 +93,13 @@ function AppointmentBooking() {
         {!selectedDate && (
           <div>
             <label>Select Date:</label>
-            <input
+            {/* <input
               type="date"
               value={selectedDate}
               onChange={(e) => setSelectedDate(e.target.value)}
-              min={new Date().toISOString().split('T')[0]} // Disable past dates
+              min={new Date().toISOString().split('T')[0]}
               
-            />
+            /> */}
           </div>
         )}
   
