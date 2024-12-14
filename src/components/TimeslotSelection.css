@@ -1,0 +1,34 @@
+.timeslot-buttons button {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: flex;
+  align-items: center; /* Ensures both text and icon align properly */
+  justify-content: space-between; /* Makes sure the text and icon have space between them */
+}
+
+.timeslot-buttons button.selected {
+  background-color: #4caf50;
+  color: white;
+  border-color: #388e3c;
+}
+
+.timeslot-buttons button:hover {
+  background-color: #e0e0e0;
+}
+
+.timeslot-buttons button i {
+  font-size: 18px;
+  color: white; /* Make sure the icon is white when selected */
+  margin-left: 10px; /* Space between the time and the icon */
+ 
+}
+
+.timeslot-buttons button.selected i {
+  color: white; /* Ensures the icon is visible on selected button */
+  
+}

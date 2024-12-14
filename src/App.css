@@ -1,0 +1,84 @@
+
+/* General container styling */
+.app-container {
+  max-width: 600px;
+  margin: 12px auto;
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: auto; /* Allow height to be dynamic based on content */
+  overflow: hidden; /* Prevent any overflow from affecting the layout */
+}
+
+/* Header styles */
+.app-header {
+  text-align: center;
+  margin-bottom: 1.5rem; /* Control spacing between header and content */
+}
+
+.app-logo {
+  max-width: 200px; /* Increase max-width of logo */
+  width: 100%; /* Make logo responsive to the container size */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 1rem;
+}
+
+.app-header h1 {
+  font-size: 2rem; /* Adjust for mobile view */
+  margin: 0.5rem 0;
+}
+
+.app-subheader {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Footer styles */
+.app-footer {
+  text-align: center;
+  font-size: 0.8rem;
+  margin-top: 2rem;
+  color: #888;
+  padding-top: 1rem;
+  /* Ensure footer is not pushed unnecessarily */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .app-container {
+    max-width: 100%; /* Ensure full width */
+    padding: 1rem;
+    margin-left: 16px;  /* Add a margin to the left */
+    margin-right: 16px; /* Add a margin to the right */
+    margin-top: 16px; /* Add a margin to the right */
+  }
+
+  .app-logo {
+    max-width: 150px; /* Adjust logo size for mobile */
+    margin-bottom: 0.8rem;
+  }
+
+  .app-header h1 {
+    font-size: 1.8rem; /* Reduce font size on smaller screens */
+  }
+
+  .app-subheader {
+    font-size: 0.9rem; /* Adjust subheader font size */
+  }
+
+  .app-footer {
+    font-size: 0.75rem; /* Slightly smaller footer text */
+  }
+}
+
+/* Larger screens */
+@media (min-width: 601px) {
+  .app-container {
+    max-width: 600px;
+  }
+}
