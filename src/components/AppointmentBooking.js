@@ -78,79 +78,84 @@ function AppointmentBooking() {
 
   return (
     <div className="appointment-booking">
-    <h1>Book an Appointment1</h1>
-    <input
-              type="date"
-              value={selectedDate}
-              onChange={(e) => setSelectedDate(e.target.value)}
-              min={new Date().toISOString().split('T')[0]} // Disable past dates
-              
-            />
-    {/* Date Picker and Display */}
+    <h1>Book an Appointment</h1>
+
+    {/* Date Selection */}
     {!appointmentConfirmed && (
       <div>
-        {/* Date Picker */}
-        {!selectedDate && (
-          <div>
-            <label>Select Date:</label>
-            {/* <input
-              type="date"
-              value={selectedDate}
-              onChange={(e) => setSelectedDate(e.target.value)}
-              min={new Date().toISOString().split('T')[0]}
-              
-            /> */}
-          </div>
-        )}
-  
-        {/* Once a date is selected, show services */}
-        {selectedDate && (
-          <div>
-            <p><strong>Selected Date: {selectedDate}</strong></p>
+        <label>Select Date:</label>
+        <input
+          type="date"
+          value={selectedDate}
+          onChange={(e) => setSelectedDate(e.target.value)}
+          min={new Date().toISOString().split('T')[0]} // Disable past dates
+        />
 
-    
-  
-            {!selectedService && (
-              <ServiceSelection services={services} onSelectService={handleServiceSelect} onBack={handleBack} />
+        {/* Display a message or placeholder if no date is selected */}
+        {!selectedDate && <p>Please select a date to continue.</p>}
+      </div>
+    )}
+
+    {/* Service and Timeslot Selection */}
+    {selectedDate && !appointmentConfirmed && (
+      <div>
+        <p>
+          <strong>Selected Date: {selectedDate}</strong>
+        </p>
+
+        {/* Service Selection */}
+        {!selectedService && (
+          <ServiceSelection
+            services={services}
+            onSelectService={handleServiceSelect}
+            onBack={handleBack}
+          />
+        )}
+
+        {/* Timeslot Selection */}
+        {selectedService && (
+          <>
+            <TimeslotSelection
+              timeslots={filteredTimeslots}
+              onSelectTimeslot={handleSelectTimeslot}
+              selectedTimeslotId={selectedTimeslotId}
+            />
+
+            {selectedService && selectedTimeslot ? (
+              <div className="confirm-button-container">
+                <button onClick={handleConfirmAppointment}>Confirm Appointment</button>
+              </div>
+            ) : (
+              <p>Please select a timeslot to confirm.</p>
             )}
-  
-            {selectedService && (
-              <>
-                <TimeslotSelection
-                  timeslots={filteredTimeslots}
-                  onSelectTimeslot={handleSelectTimeslot} // Use handleSelectTimeslot directly
-                  selectedTimeslotId={selectedTimeslotId} // Pass the selectedTimeslotId to highlight the selected button
-                />
-                {selectedService && selectedTimeslot ? (
-                  <div className="confirm-button-container">
-                    <button onClick={handleConfirmAppointment}>Confirm Appointment</button>
-                  </div>
-                ) : (
-                  <p>Please select a timeslot to confirm.</p>
-                )}
-                {/* Cancel and Back buttons next to each other */}
-                <div className="button-container">
-                  <button onClick={handleCancel}>Cancel</button>
-                  <button onClick={handleBack}>Back</button>
-                </div>
-              </>
-            )}
-          </div>
+
+            {/* Cancel and Back buttons */}
+            <div className="button-container">
+              <button onClick={handleCancel}>Cancel</button>
+              <button onClick={handleBack}>Back</button>
+            </div>
+          </>
         )}
       </div>
     )}
-  
-    {/* Appointment Confirmed */}
+
+    {/* Appointment Confirmation */}
     {appointmentConfirmed && (
       <div className="appointment-confirmed">
         <h2>Appointment Confirmed</h2>
-        <p><strong>Service:</strong> {selectedService.name}</p>
-        <p><strong>Timeslot:</strong> {selectedTimeslot.time}</p>
-        <p><strong>Date:</strong> {selectedDate}</p>
-        <button onClick={handleCancelAppointment}>Cancel Appointment</button> {/* Full width cancel appointment button */}
+        <p>
+          <strong>Service:</strong> {selectedService.name}
+        </p>
+        <p>
+          <strong>Timeslot:</strong> {selectedTimeslot.time}
+        </p>
+        <p>
+          <strong>Date:</strong> {selectedDate}
+        </p>
+        <button onClick={handleCancelAppointment}>Cancel Appointment</button>
       </div>
     )}
-    </div>
+  </div>
   );
 }
 
