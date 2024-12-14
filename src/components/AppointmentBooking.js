@@ -45,7 +45,7 @@ function AppointmentBooking() {
   const [selectedService, setSelectedService] = useState(null);
   const [selectedTimeslot, setSelectedTimeslot] = useState(null);
   const [appointmentConfirmed, setAppointmentConfirmed] = useState(false);
-  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedDate, setSelectedDate] = useState("");
   const [step, setStep] = useState(1); // Step for tracking progress
   const [selectedTimeslotId, setSelectedTimeslotId] = useState(null);
 
@@ -105,7 +105,7 @@ function AppointmentBooking() {
 
   return (
     <div className="appointment-booking">
-      <h1>Book an Appointment</h1>
+      <h1>Book an Appointment1</h1>
 
       {/* Date Picker and Display */}
       {!appointmentConfirmed && (
@@ -115,11 +115,11 @@ function AppointmentBooking() {
             <div>
               <label>Select Date:</label>
               <input
-                type="date"
-                value={selectedDate}
-                onChange={(e) => setSelectedDate(e.target.value)}
-                min={new Date().toISOString().split("T")[0]}
-                autoComplete="off"
+              type="date"
+              value={selectedDate || ""} // Ensure it's either the selected date or empty
+              onChange={(e) => setSelectedDate(e.target.value)} // Update date when selected
+              min={new Date().toISOString().split('T')[0]} // Disable past dates
+              autoComplete="off"
               />
             </div>
           )}
