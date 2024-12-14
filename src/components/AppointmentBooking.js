@@ -20,7 +20,7 @@ function AppointmentBooking() {
   const [selectedService, setSelectedService] = useState(null);
   const [selectedTimeslot, setSelectedTimeslot] = useState(null);
   const [appointmentConfirmed, setAppointmentConfirmed] = useState(false);
-  const [selectedDate, setSelectedDate] = useState('');
+  const [selectedDate, setSelectedDate] = useState("");
   const [step, setStep] = useState(1); // Step for tracking progress
   const [selectedTimeslotId, setSelectedTimeslotId] = useState(null);
   
@@ -92,7 +92,7 @@ function AppointmentBooking() {
               value={selectedDate}
               onChange={(e) => setSelectedDate(e.target.value)}
               min={new Date().toISOString().split('T')[0]} // Disable past dates
-              
+              placeholder="Select a date"
             />
           </div>
         )}
