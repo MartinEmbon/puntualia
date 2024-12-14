@@ -88,11 +88,11 @@ function AppointmentBooking() {
           <div>
             <label>Select Date:</label>
             <input
-              type="date"
-              defaultValue=""
-              onChange={(e) => setSelectedDate(e.target.value)}
-              min={new Date().toISOString().split('T')[0]} // Disable past dates
-              
+            type="date"
+            value={selectedDate || undefined}
+            onChange={(e) => setSelectedDate(e.target.value)}
+            min={new Date().toISOString().split('T')[0]}
+            autoComplete="off"
             />
           </div>
         )}
