@@ -1,3 +1,10 @@
+.appointment-booking > div {
+  min-height: 250px; /* Ensure each step has a minimum height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+}
+
 .appointment-booking {
     text-align: center;
     padding: 1rem;

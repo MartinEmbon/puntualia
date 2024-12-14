@@ -23,6 +23,7 @@ function AppointmentBooking() {
   const [selectedDate, setSelectedDate] = useState('');
   const [step, setStep] = useState(1); // Step for tracking progress
   const [selectedTimeslotId, setSelectedTimeslotId] = useState(null);
+  
 
   const handleSelectTimeslot = (timeslot) => {
     setSelectedTimeslotId(timeslot.id);  // Update the selected timeslot ID
@@ -43,6 +44,7 @@ function AppointmentBooking() {
 
   const handleCancel = () => {
     // Reset all selections and go back to the initial state
+    
     setSelectedService(null);
     setSelectedTimeslot(null);
     setSelectedDate('');
@@ -73,6 +75,7 @@ function AppointmentBooking() {
     }
   };
 
+
   return (
     <div className="appointment-booking">
     <h1>Book an Appointment</h1>
@@ -89,6 +92,7 @@ function AppointmentBooking() {
               value={selectedDate}
               onChange={(e) => setSelectedDate(e.target.value)}
               min={new Date().toISOString().split('T')[0]} // Disable past dates
+              
             />
           </div>
         )}
@@ -97,9 +101,11 @@ function AppointmentBooking() {
         {selectedDate && (
           <div>
             <p><strong>Selected Date: {selectedDate}</strong></p>
+
+    
   
             {!selectedService && (
-              <ServiceSelection services={services} onSelectService={handleServiceSelect} />
+              <ServiceSelection services={services} onSelectService={handleServiceSelect} onBack={handleBack} />
             )}
   
             {selectedService && (
