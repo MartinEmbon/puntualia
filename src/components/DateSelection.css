@@ -1,0 +1,73 @@
+.date-selection-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .date-selection-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .date-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .date-button {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .date-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+  }
+  
+  .date-button:active {
+    background-color: #388e3c;
+  }
+  
+  .button-container {
+    margin-top: 20px;
+  }
+  
+  .back-button {
+    background-color: #f44336;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    width: 100%;
+    max-width: 300px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  .back-button:hover {
+    background-color: #4CAF50;
+  }
+  
+  .back-button:active {
+    background-color: #c62828;
+  }
+  

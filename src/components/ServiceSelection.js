@@ -1,7 +1,7 @@
 import React from 'react';
 import './ServiceSelection.css';
 
-function ServiceSelection({ services, onSelectService,onBack  }) {
+function ServiceSelection({ services, onSelectService  }) {
   return (
     <div className="service-selection">
       <h2>Select a Service</h2>
@@ -17,7 +17,7 @@ function ServiceSelection({ services, onSelectService,onBack  }) {
 
        {/* Back button to return to the date selection */}
        <div className="button-container">
-        <button onClick={onBack}>Back</button>
+        {/* <button onClick={onBack}>Back</button> */}
       </div>
     </div>
   );

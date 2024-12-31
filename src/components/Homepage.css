@@ -1,0 +1,119 @@
+.homepage {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f9f9f9;
+    padding: 50px;
+  }
+  
+  .hero-content {
+    max-width: 50%;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .cta-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .hero-image img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  
+  .features {
+    text-align: center;
+    padding: 50px 20px;
+  }
+  
+  .features h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .features-content {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .feature {
+    max-width: 30%;
+  }
+  
+  .features-image {
+    max-width: 80%;
+    margin: 20px auto 0;
+    display: block;
+  }
+  
+  .testimonials {
+    background: #f0f0f0;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .testimonials h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .testimonials-content {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  blockquote {
+    max-width: 45%;
+    font-style: italic;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  cite {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .footer-logo {
+    max-width: 150px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-links a {
+    color: #007bff;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  

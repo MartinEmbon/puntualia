@@ -34,3 +34,16 @@
     background-color: #e53935;
   }
   
+  .search-bar {
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .search-bar input {
+    width: 300px;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
